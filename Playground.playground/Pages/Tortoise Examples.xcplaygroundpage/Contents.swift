@@ -254,7 +254,7 @@ turtle.currentPosition()
 let scale = 20
 
 let diagonal = (sqrt(20*20+20*20)*1.5)
-
+turtle.penUp()
 turtle.setPosition(to: Point(x: 10, y: 40))
 //Functions
 func drawArrow() {
@@ -263,7 +263,7 @@ func drawArrow() {
 
     //Draw turtle
     turtle.drawSelf()
-
+    turtle.penDown()
     turtle.forward(steps: 3 * scale)
     turtle.left(by: 90)
     turtle.forward(steps: 1 * scale)
@@ -290,23 +290,36 @@ func drawArrow() {
     turtle.forward(steps: 1)
     turtle.left(by: 90)
     turtle.penDown()
+    
+    turtle.penUp()
+    turtle.forward(steps: 5*scale)
+    turtle.penDown()
 }
 
 
 
 
-//Use in a loop
+//Fill grid with arrows
+
+for _ in 1...9 {
+    
 for _ in 1...5 {
 
     drawArrow()
 
 //Get into position to draw the next arrow
-turtle.penUp()
-turtle.forward(steps: 5*scale)
-turtle.penDown()
+
     
     
 }
+    turtle.penUp()
+    turtle.left(by: 180)
+    turtle.forward(steps: 500)
+    turtle.right(by: 90)
+    turtle.forward(steps: 60)
+    turtle.right(by: 90)
+}
+
 /*:
  ## Show the Assistant Editor
  Don't see any results?
