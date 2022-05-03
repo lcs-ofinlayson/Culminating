@@ -33,6 +33,12 @@ PlaygroundPage.current.liveView = canvas
 
 To use the Tortoise abstraction, just create an instance of the Tortoise class, and provide it with a canvas object that is should draw upon.
 */
+//Draw a grid
+canvas.drawAxes(withScale: true, by: 20, color: .black
+)
+
+
+
 
 //// Create a turtle that will draw upon the canvas
 let turtle = Tortoise(drawingUpon: canvas)
@@ -247,34 +253,60 @@ turtle.currentPosition()
 //Set Scale
 let scale = 20
 
-let diagonal = sqrt(scale * scale + scale * scale)
+let diagonal = (sqrt(20*20+20*20)*1.5)
 
-//Draw Arrow
+turtle.setPosition(to: Point(x: 10, y: 40))
+//Functions
+func drawArrow() {
+   
+
+
+    //Draw turtle
+    turtle.drawSelf()
+
+    turtle.forward(steps: 3 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 135)
+    turtle.forward(steps: Int(diagonal))
+    turtle.right(by: 90)
+    turtle.forward(steps: Int(diagonal))
+    turtle.right(by: 135)
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 3 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+
+    //Where are we
+    turtle.drawSelf()
+    turtle.currentPosition()
+    turtle.currentHeading()
+
+    //Correct Position
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 1)
+    turtle.left(by: 90)
+    turtle.penDown()
+}
+
+
+
+
+//Use in a loop
+for _ in 1...5 {
+
+    drawArrow()
+
+//Get into position to draw the next arrow
 turtle.penUp()
-turtle.forward(steps: 3 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 3 * scale)
-turtle.right(by: 90)
+turtle.forward(steps: 5*scale)
 turtle.penDown()
-
-//Draw turtle
-turtle.drawSelf()
-
-turtle.forward(steps: 3 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 135)
-turtle.forward(steps: 2 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 2 * scale)
-turtle.right(by: 135)
-turtle.forward(steps: 1 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 3 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-
-
+    
+    
+}
 /*:
  ## Show the Assistant Editor
  Don't see any results?
