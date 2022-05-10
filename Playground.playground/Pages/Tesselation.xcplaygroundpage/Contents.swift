@@ -162,31 +162,29 @@ moveOverForNewShape()
 
 }
         
-// Make a function for the more rows of the shape
+ //Make a function for the more rows of the shape
 
 func drawRowOfShape() {
-    
-    for _ in 1 ... 6 {
-        
-    drawShape()
-    moveOverForNewShape()
 
-        turtle.penUp()
-        turtle.right(by: 180)
-        turtle.forward(steps: 21 * scale)
-        turtle.right(by: 90)
-        turtle.forward(steps: 4 * scale)
-        turtle.right(by: 90)
-        turtle.penDown()
-        
+    for _ in 1 ... 6 {
+
+   
+
     }
-    
-    
+
+
 }
 
 
+turtle.penUp()
+turtle.left(by: 180)
+turtle.forward(steps: 25 * scale)
+turtle.left(by: 180)
+turtle.left(by: 90)
+turtle.forward(steps: 3 * scale)
+turtle.right(by: 90)
+turtle.drawSelf()
 
 
 
-        
 canvas.highPerformance = false
