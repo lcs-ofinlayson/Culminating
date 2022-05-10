@@ -177,16 +177,23 @@ drawShape()
 }
 
 
-//Make more rows of shape
+//Make more rows of shape and make a loop
 
-turtle.penUp()
-turtle.left(by: 180)
-turtle.forward(steps: 24 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 80)
-turtle.right(by: 90)
-turtle.penDown()
-drawRowOfShape()
+
+for _ in 1 ... 5 {
+    
+    turtle.penUp()
+    turtle.left(by: 180)
+    turtle.forward(steps: 24 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 80)
+    turtle.right(by: 90)
+    turtle.penDown()
+    drawRowOfShape()
+    
+    
+}
+
 
 
 
