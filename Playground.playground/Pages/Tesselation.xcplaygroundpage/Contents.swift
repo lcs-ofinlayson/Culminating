@@ -33,6 +33,7 @@ PlaygroundPage.current.liveView = canvas
  If you do not wish to see a grid, comment out the code on line 48.
  
  */
+canvas.highPerformance = true
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
 
@@ -53,8 +54,6 @@ let scale = 20
 //Draw a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black
 )
-
-
 
 
 // Create a turtle that will draw upon the canvas
@@ -95,6 +94,27 @@ func fillSquare(){
     
     
 }
+
+
+// Make a function for the shapes to move across
+
+func moveOverForNewShape() {
+    turtle.penUp()
+    turtle.forward(steps: 5 * scale)
+    turtle.penDown()
+    
+    
+}
+
+
+
+
+
+// Make a function for the shape
+
+func drawShape() {
+
+
 // Draw shape with squares
 fillSquare()
 turtle.forward(steps: 20)
@@ -123,6 +143,50 @@ turtle.left(by: 90)
 turtle.forward(steps: 20)
 turtle.penDown()
 fillSquare()
+    turtle.penUp()
+    turtle.right(by: 180)
+    turtle.forward(steps: 2 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.penDown()
+    
+    
+
+}
+
+for _ in 1 ... 6 {
+    
+drawShape()
+moveOverForNewShape()
+
+}
+        
+// Make a function for the more rows of the shape
+
+func drawRowOfShape() {
+    
+    for _ in 1 ... 6 {
+        
+    drawShape()
+    moveOverForNewShape()
+
+        turtle.penUp()
+        turtle.right(by: 180)
+        turtle.forward(steps: 21 * scale)
+        turtle.right(by: 90)
+        turtle.forward(steps: 4 * scale)
+        turtle.right(by: 90)
+        turtle.penDown()
+        
+    }
+    
+    
+}
 
 
 
+
+
+        
+canvas.highPerformance = false
