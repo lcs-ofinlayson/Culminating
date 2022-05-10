@@ -102,4 +102,21 @@ fillSquare()
 turtle.right(by: 90)
 turtle.forward(steps: 20)
 fillSquare()
+turtle.forward(steps: 20)
+fillSquare()
+turtle.left(by: 180)
+turtle.forward(steps: 40)
+fillSquare()
+turtle.forward(steps: 40)
+turtle.right(by: 180)
+turtle.forward(steps: 20)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.right(by: 90)
+fillSquare()
+turtle.penUp()
 
+
+
+
+
