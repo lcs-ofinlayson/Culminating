@@ -167,8 +167,9 @@ moveOverForNewShape()
 func drawRowOfShape() {
 
     for _ in 1 ... 6 {
-
-   
+drawShape()
+        turtle.forward(steps: 100)
+        
 
     }
 
@@ -176,14 +177,18 @@ func drawRowOfShape() {
 }
 
 
+//Make more rows of shape
+
 turtle.penUp()
 turtle.left(by: 180)
-turtle.forward(steps: 25 * scale)
-turtle.left(by: 180)
-turtle.left(by: 90)
-turtle.forward(steps: 3 * scale)
+turtle.forward(steps: 24 * scale)
 turtle.right(by: 90)
-turtle.drawSelf()
+turtle.forward(steps: 80)
+turtle.right(by: 90)
+turtle.penDown()
+drawRowOfShape()
+
+
 
 
 
