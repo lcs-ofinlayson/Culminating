@@ -1,6 +1,6 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
@@ -45,9 +45,9 @@ let scale = 20
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 
 //Draw a grid
@@ -76,24 +76,26 @@ turtle.setPosition(to: Point(x: 20, y: 40))
 func fillSquare(){
     
     for _ in 1 ... 10 {
+        
         turtle.setHeading(to:180)
-    turtle.forward(steps: 20)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1)
-    turtle.right(by: 90)
-    turtle.forward(steps: 20)
+        turtle.forward(steps: 20)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90)
+        turtle.forward(steps: 20)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        
+    }
+
     turtle.left(by: 90)
-    turtle.forward(steps: 1)
+    turtle.forward(steps: 20)
     turtle.left(by: 90)
     
-    }
-    turtle.left(by: 90)
-    turtle.forward(steps: 20)
-    turtle.left(by: 90)
-
     
 }
-// Draw series of squares
+// Draw shape with squares
 fillSquare()
 turtle.forward(steps: 20)
 fillSquare()
@@ -115,8 +117,12 @@ turtle.forward(steps: 20)
 turtle.right(by: 90)
 fillSquare()
 turtle.penUp()
-
-
+turtle.left(by: 90)
+turtle.forward(steps: 60)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.penDown()
+fillSquare()
 
 
 
