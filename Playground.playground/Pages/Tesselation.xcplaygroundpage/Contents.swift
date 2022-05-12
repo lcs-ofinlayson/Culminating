@@ -51,9 +51,9 @@ let scale = 20
  
  */
 
-//Draw a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black
-)
+////Draw a grid
+//canvas.drawAxes(withScale: true, by: 20, color: .black
+//)
 
 
 // Create a turtle that will draw upon the canvas
