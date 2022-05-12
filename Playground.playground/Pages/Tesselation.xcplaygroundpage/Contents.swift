@@ -114,7 +114,7 @@ func moveOverForNewShape() {
 
 func drawShape() {
 
-
+    turtle.penDown()
 // Draw shape with squares
 fillSquare()
 turtle.forward(steps: 20)
@@ -150,7 +150,7 @@ fillSquare()
     turtle.forward(steps: 20)
     turtle.left(by: 90)
     turtle.penDown()
-    
+    turtle.penUp()
     
 
 }
